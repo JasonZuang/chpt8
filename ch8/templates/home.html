@@ -4,8 +4,18 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-	Hi {{user.username}}! Your Penis Size is {{user.penis_length}} inches!
+<div class="container">
+	Hi <h3>{{user.username}}</h3>
+</div>
+<div class="container">
+	The Desirability Quotient is a Quotient that tells you your desirability (male) by your preferred sex. The range is on a scale of 0-10.
+</div>
+<div class="container">
+	{{user.dq}}
+</div>
+<div class="container">
 	<p><a href="{% url 'logout' %}"> Log Out </a></p>
+</div>
 {% else %}
 	<p> You Are Not Logged In </p>
 	<a href = "{% url 'login' %}"> Log In </a> |
